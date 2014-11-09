@@ -1,9 +1,6 @@
 import time
 import tweepy
 
-f = open("deleted.txt","w")
-s = open("idsDeleted.txt","w")
-
 consumer_key = ""
 consumer_secret = ""
 access_token = ""
@@ -16,6 +13,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 y = []
+#add list of users to be deleted (can also do with CSV file.write)
 deleted = []
 
 for item in y:
@@ -26,12 +24,3 @@ for item in y:
 		time.sleep(.5)
 	except:
 		print "break"
-
-ids = str(ids)
-print ids
-f.write(ids)
-f.close
-
-y = str(y)
-s.write(y)
-s.close
